@@ -7,6 +7,22 @@
 :set mouse=a
 :set smarttab
 
+
+" to install the Plugin Manager, run thi in the shell
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+" to get CoC running, we need to
+" 1. 
+"     sudo npm install -g yarn
+" 2.
+"    cd /home/michi/.local/share/nvim/plugged/coc.nvim & yarn install
+"
+" 3. install the coc-language specifics
+"    
+"    :CocInstall coc-pyright    # Note the coc-python is deprecated
+
+
+
 " plugins go into /home/michi/.local/share/nvim/plugged/coc.nvim
 call plug#begin()
 
