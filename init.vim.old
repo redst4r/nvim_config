@@ -21,7 +21,11 @@
 "    
 "    :CocInstall coc-pyright    # Note the coc-python is deprecated
 
-
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " plugins go into /home/michi/.local/share/nvim/plugged/coc.nvim
 call plug#begin()
@@ -67,8 +71,6 @@ set termguicolors
 " Don't forget set the airline theme as well.
 " let g:airline_theme = 'simple'
 
-" Note, the above line is ignored in Neovim 0.1.5 above, use this line instead.
-set termguicolors
 
 " air-line
 let g:airline_powerline_fonts = 1
