@@ -163,7 +163,10 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
-
+vc[[
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+]]
 
 -- startify \
 vc[[
