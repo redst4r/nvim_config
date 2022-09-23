@@ -16,7 +16,10 @@ local o = vim.opt
 local g = vim.g
 local vc = vim.cmd
 
+-- Leader key
+g.mapleader =" "
 
+-- general settings
 o.number = true
 o.relativenumber = true
 o.autoindent= true
@@ -31,25 +34,27 @@ o.showmode = false
 o.termguicolors = true
 o.cursorline = true
 
--- Plugins
--- plugins go into /home/michi/.local/share/nvim/plugged/coc.nvim
 vim.call('plug#begin')
-vc[[Plug 'http://github.com/tpope/vim-surround']]
-vc[[Plug 'http://github.com/tpope/vim-surround']]
-vc[[Plug 'https://github.com/vim-airline/vim-airline']]
-vc[[Plug 'https://github.com/vim-airline/vim-airline-themes']]
-vc[[Plug 'https://github.com/preservim/nerdtree']]
-vc[[Plug 'https://github.com/rafi/awesome-vim-colorschemes']]
-vc[[Plug 'https://github.com/ryanoasis/vim-devicons']]
-vc[[Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}]]
-vc[[Plug 'kyazdani42/nvim-web-devicons']]
-vc[[Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }]]
-vc[[Plug 'https://github.com/tc50cal/vim-terminal' ]]
-vc[[Plug 'https://github.com/preservim/tagbar' ]]
-vc[[Plug 'https://github.com/neoclide/coc.nvim'  ]]
-vc[[Plug 'https://github.com/lewis6991/gitsigns.nvim']]
-vc[[Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }]]
-vc[[Plug 'mhinz/vim-startify']]
+vc[[
+Plug 'http://github.com/tpope/vim-surround'
+Plug 'http://github.com/tpope/vim-surround'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'https://github.com/preservim/nerdtree'
+Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'https://github.com/tc50cal/vim-terminal' 
+Plug 'https://github.com/preservim/tagbar' 
+Plug 'https://github.com/neoclide/coc.nvim'  
+Plug 'https://github.com/lewis6991/gitsigns.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'mhinz/vim-startify'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+]]
 vim.call('plug#end')
 
 vc[[colorscheme jellybeans]]
@@ -186,3 +191,12 @@ let g:startify_bookmarks = [
 
 let g:startify_custom_header = ''
 ]]
+
+-- buffer/window navigation
+map('n', '<leader>l', ':bnext<cr>')
+map('n', '<leader>h', ':bprev<cr>')
+
+-- Telescope
+
+map('n', '<leader>ff', ':Telescope find_files<cr>')
+map('n', '<leader>fg', ':Telescope live_grep<cr>')
