@@ -34,6 +34,9 @@ o.showmode = false
 o.termguicolors = true
 o.cursorline = true
 
+-- fold markers on the side 
+vim.wo.foldcolumn="auto:5"
+
 vim.call('plug#begin')
 vc[[
 Plug 'http://github.com/tpope/vim-surround'
@@ -90,6 +93,11 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 ]]
 -- addustable fontsize 
 g.gui_font_default_size = 11
@@ -182,11 +190,10 @@ let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ ]
 let g:startify_bookmarks = [
+	\ '~/ms_python_packages',
+	\ '~/postdoc_seattle/CRUK-code',
 	\ { 'c': '~/.config/nvim/init.lua' },
 	\ { 'z': '~/.zshrc' },
-	\ '~/ms_python_packages',
-	\ '~/postdoc_seattle',
-	\ '~/Pics',
 	\ ]
 
 let g:startify_custom_header = ''

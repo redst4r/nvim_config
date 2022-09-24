@@ -1,4 +1,5 @@
 {
 	"python.linting.pylintEnabled": false,
-	"python.linting.flake8Enabled": true
+	"python.linting.flake8Enabled": true,
+    "python.pythonPath": "/home/michi/miniconda3_newtry/envs/June2021"
 }
