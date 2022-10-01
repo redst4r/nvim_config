@@ -28,6 +28,7 @@ o.shiftwidth = 4
 o.softtabstop = 4
 o.mouse = "a"
 o.smarttab= true
+o.expandtab = true
 o.encoding = "utf-8"
 o.clipboard = "unnamedplus" -- for system clipboard interaction
 o.showmode = false

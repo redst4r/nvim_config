@@ -3,16 +3,15 @@ local vc = vim.cmd
 vim.call('plug#begin')
 vc[[
 Plug 'http://github.com/tpope/vim-surround'
-Plug 'http://github.com/tpope/vim-surround'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/ryanoasis/vim-devicons'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-Plug 'https://github.com/tc50cal/vim-terminal' 
+" Plug 'https://github.com/tc50cal/vim-terminal' 
 Plug 'https://github.com/preservim/tagbar' 
 Plug 'https://github.com/neoclide/coc.nvim'  
 Plug 'https://github.com/lewis6991/gitsigns.nvim'
@@ -20,6 +19,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mhinz/vim-startify'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'kartikp10/noctis.nvim'
+Plug 'rktjmp/lush.nvim'  " required by noctis
 ]]
 vim.call('plug#end')
 
@@ -82,6 +83,9 @@ require'nvim-treesitter.configs'.setup {
       scope_incremental = "grc",
       node_decremental = "grm",
     },
+  },
+  indent = {
+    enable = true
   },
 }
 
