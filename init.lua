@@ -12,6 +12,10 @@ to get CoC running, we need to
 
 *********************************************************
 --]]
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 require "keymaps"
 require "plugins"
 
@@ -36,7 +40,9 @@ o.termguicolors = true
 o.cursorline = true
 
 
-vc[[colorscheme jellybeans]]
+-- vc[[colorscheme jellybeans]]
+vc[[colorscheme noctis]]
+-- vc[[colorscheme minimalist]]
 
 -- Tab completion for autosuggest
 vc[[

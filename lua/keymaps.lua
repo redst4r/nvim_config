@@ -5,10 +5,12 @@ end
 
 -- Leader key
 vim.g.mapleader =" "
-map({'n','i','v'}, '<C-f>', ':NERDTreeFocus<CR>')
 map({'n','i','v'}, '<C-t>', ':NERDTreeToggle<CR>')
---map({'n','i','v'},'<C-n>', ':NERDTree<CR>')
 map({'n','i','v'},'<C-n>', ':TagbarToggle<CR>')
+
+-- map({'n','i','v'}, '<C-t>', ':NvimTreeToggle<CR>')
+-- map({'n','i','v'}, '<C-f>', ':NvimTreeFocus<CR>')
+
 
 -- window navigation
 map({'n','i','v'},'<C-h>', '<C-w>h')

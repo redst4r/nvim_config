@@ -9,6 +9,7 @@ Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " Plug 'https://github.com/tc50cal/vim-terminal' 
@@ -21,13 +22,39 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'kartikp10/noctis.nvim'
 Plug 'rktjmp/lush.nvim'  " required by noctis
+Plug 'numToStr/Comment.nvim'   " comments
+Plug 'folke/which-key.nvim'
+Plug 'https://github.com/lunarvim/onedarker.nvim'
+
 ]]
 vim.call('plug#end')
 
 
 require('gitsigns').setup()
-require("bufferline").setup{}
-require('nvim-web-devicons').setup{}
+require("bufferline").setup {}
+require('nvim-web-devicons').setup {}
+require('Comment').setup()
+require("which-key").setup {}
+-- require("nvim-tree").setup()
+-- require("nvim-tree").setup({
+--   sort_by = "case_sensitive",
+--   view = {
+--     adaptive_size = false,
+--     mappings = {
+--       list = {
+--         { key = "<C-y>", action = "tabnew" },
+--       },
+--     },
+--   },
+--   renderer = {
+--     group_empty = true,
+--   },
+--   filters = {
+--     dotfiles = true,
+--   },
+-- })
+
+
 
 -- Airline setup
 vc[[
@@ -49,7 +76,7 @@ let g:airline_symbols.linenr = ''
 ]]
 
 -- treesitter setup
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup{
   -- A list of parser names, or "all"
   ensure_installed = { "python", "lua", "rust" },
 
@@ -100,7 +127,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
 	\ '~/ms_python_packages',
 	\ '~/postdoc_seattle/CRUK-code',
-	\ '~/Dropbox/cruk-meetings.md',
+	\ { 'n': '~/Dropbox/cruk-meetings.md'},
 	\ '~/Nextcloud/blogsite/_posts',
 	\ { 'c': '~/.config/nvim/init.lua' },
 	\ { 'z': '~/.zshrc' },
@@ -108,4 +135,3 @@ let g:startify_bookmarks = [
 
 let g:startify_custom_header = ''
 ]]
-
