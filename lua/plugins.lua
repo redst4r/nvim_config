@@ -124,12 +124,16 @@ let g:startify_lists = [
           \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ ]
+
 let g:startify_bookmarks = [
 	\ '~/ms_python_packages',
 	\ '~/postdoc_seattle/CRUK-code',
 	\ { 'n': '~/Dropbox/cruk-meetings.md'},
 	\ '~/Nextcloud/blogsite/_posts',
-	\ { 'c': '~/.config/nvim/init.lua' },
+	\ { 'ci': '~/.config/nvim/init.lua' },
+	\ { 'cp': '~/.config/nvim/lua/plugins.lua' },
+	\ { 'ck': '~/.config/nvim/lua/keymaps.lua' },
+	\ { 'cq': '~/.config/qtile/config.py'},
 	\ { 'z': '~/.zshrc' },
 	\ ]
 
