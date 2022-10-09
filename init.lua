@@ -16,9 +16,6 @@ to get CoC running, we need to
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-require "keymaps"
-require "plugins"
-
 local o = vim.opt
 local g = vim.g
 local vc = vim.cmd
@@ -38,6 +35,9 @@ o.clipboard = "unnamedplus" -- for system clipboard interaction
 o.showmode = false
 o.termguicolors = true
 o.cursorline = true
+
+require "keymaps"
+require "plugins"
 
 
 -- vc[[colorscheme jellybeans]]

@@ -12,9 +12,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-" Plug 'https://github.com/tc50cal/vim-terminal' 
-Plug 'https://github.com/preservim/tagbar' 
-Plug 'https://github.com/neoclide/coc.nvim'  
+" Plug 'https://github.com/tc50cal/vim-terminal'
+Plug 'https://github.com/preservim/tagbar'
+Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/lewis6991/gitsigns.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mhinz/vim-startify'
@@ -25,7 +25,10 @@ Plug 'rktjmp/lush.nvim'  " required by noctis
 Plug 'numToStr/Comment.nvim'   " comments
 Plug 'folke/which-key.nvim'
 Plug 'https://github.com/lunarvim/onedarker.nvim'
-
+Plug 'dhruvasagar/vim-dotoo'
+Plug 'inkarkat/vim-ShowTrailingWhitespace'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'norcalli/nvim-colorizer.lua' "inline color display
 ]]
 vim.call('plug#end')
 
@@ -35,6 +38,7 @@ require("bufferline").setup {}
 require('nvim-web-devicons').setup {}
 require('Comment').setup()
 require("which-key").setup {}
+require'colorizer'.setup()
 -- require("nvim-tree").setup()
 -- require("nvim-tree").setup({
 --   sort_by = "case_sensitive",
@@ -55,6 +59,12 @@ require("which-key").setup {}
 -- })
 
 
+
+-- doToo setup
+vc[[
+let g:dotoo#agenda#files=['~/Dropbox/dotoo-files/*.dotoo']
+let g:dotoo#capture#refile=expand('~/Dropbox/dotoo-files/refile.dotoo')
+]]
 
 -- Airline setup
 vc[[
