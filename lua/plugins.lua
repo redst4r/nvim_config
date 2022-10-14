@@ -29,6 +29,7 @@ Plug 'dhruvasagar/vim-dotoo'
 Plug 'inkarkat/vim-ShowTrailingWhitespace'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'norcalli/nvim-colorizer.lua' "inline color display
+Plug 'joshdick/onedark.vim'
 ]]
 vim.call('plug#end')
 
@@ -39,7 +40,6 @@ require('nvim-web-devicons').setup {}
 require('Comment').setup()
 require("which-key").setup {}
 require'colorizer'.setup()
--- require("nvim-tree").setup()
 -- require("nvim-tree").setup({
 --   sort_by = "case_sensitive",
 --   view = {
@@ -116,7 +116,7 @@ require 'nvim-treesitter.configs'.setup{
     enable = true,
     keymaps = {
       init_selection = "gnn", -- TODO change those keymaps to something usefull
-      node_incremental = "grn",
+      node_incremental = "gnn",
       scope_incremental = "grc",
       node_decremental = "grm",
     },
@@ -148,4 +148,24 @@ let g:startify_bookmarks = [
 	\ ]
 
 let g:startify_custom_header = ''
+]]
+
+
+-- Coc setup
+
+vc[[
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
 ]]

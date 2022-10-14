@@ -41,7 +41,8 @@ require "plugins"
 
 
 -- vc[[colorscheme jellybeans]]
-vc[[colorscheme noctis]]
+-- vc[[colorscheme noctis]]
+vc[[colorscheme onedark]]
 -- vc[[colorscheme minimalist]]
 
 -- Tab completion for autosuggest
