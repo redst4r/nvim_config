@@ -39,6 +39,11 @@ o.cursorline = true
 require "keymaps"
 require "plugins"
 
+vc[[
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+]]
+
+-- au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 -- vc[[colorscheme jellybeans]]
 -- vc[[colorscheme noctis]]

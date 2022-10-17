@@ -30,6 +30,7 @@ Plug 'inkarkat/vim-ShowTrailingWhitespace'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'norcalli/nvim-colorizer.lua' "inline color display
 Plug 'joshdick/onedark.vim'
+Plug 'oberblastmeister/neuron.nvim', { 'branch': 'unstable' }
 ]]
 vim.call('plug#end')
 
@@ -40,6 +41,14 @@ require('nvim-web-devicons').setup {}
 require('Comment').setup()
 require("which-key").setup {}
 require'colorizer'.setup()
+-- require'neuron'.setup {
+--     virtual_titles = true,
+--     mappings = true,
+--     run = nil, -- function to run when in neuron dir
+--     neuron_dir = "~/DropboxDecrypted/zettelkasten",
+--     leader = "gz", -- the leader key to for all mappings, remember with 'go zettel'
+-- }
+-- require("nvim-tree").setup()
 -- require("nvim-tree").setup({
 --   sort_by = "case_sensitive",
 --   view = {
